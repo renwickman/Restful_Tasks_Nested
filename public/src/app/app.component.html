@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restful Tasks Nested</title>
+</head>
+<body>
+<div>
+  <h1>Restful Tasks Nested</h1>
+  <div>
+  <button (click)=" getTasksFromService() ">GET ALL TASKS!</button>
+
+  <div *ngFor="let task of tasks">
+    <p>{{task.title}}</p>
+    <button (click)="onDescriptionClick(task._id)">Show</button>
+  </div>
+
+<app-task *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
+
+  </div>
+</div>
+
+</body>
+</html>
